@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Vendas extends Model
 {
     use HasFactory;
+
+    protected $fillable =[
+                         'id',
+                         'cliente_id',
+                         'vendedor_id',
+                         'data_de_venda'
+                        ];
+
+    protected $table ='Vendas';
+
 }
