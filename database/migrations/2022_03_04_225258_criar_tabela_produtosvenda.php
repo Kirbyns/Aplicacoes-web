@@ -13,12 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('Vendas', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->bigInteger('cliente_id')->unsigned();
-            $table->foreing('cliente_id')->references('id')->on('Clientes')->onDelete('cascade');
-            $table->date('data_da_venda');
+        Schema::create('ProdutosVenda',function(Blueprint $table){
+            $table->id();
+            $table->bigInteger('vendas_id')->unsigned();
+            $table->bigInteger('produtos_id')->unsigned();
+            $table->integer('quantidade');
+            $table->double('valor', 12, 2);
             $table->timestamps();
+
         });
     }
 
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Vendas');
+        //
     }
 };
