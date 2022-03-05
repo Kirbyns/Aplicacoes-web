@@ -21,7 +21,10 @@ class Clientes extends Model
     //define tabela
     protected $table ='Clientes' ;
 
-
+    public function compras()
+    {
+        return $this->hasMany(Vendas::class,'cliente_id');
+    }
 
     use HasFactory;
 }

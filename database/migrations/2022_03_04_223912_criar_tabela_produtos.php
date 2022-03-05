@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->string('descricao');
-            $table->double('preço', 12, 2);
+            $table->double('preco', 12, 2);
             $table->timestamps();
 
         });

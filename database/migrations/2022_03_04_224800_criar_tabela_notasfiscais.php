@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('NotasFiscais',function(Blueprint $table){
             $table->id();
-            $table->bigInterger('vendas_id')->unsigned();
+            $table->bigInteger('vendas_id')->unsigned();
             $table->double('valor', 12, 2);
             $table->double('imposto', 12, 2);
             $table->timestamps();
