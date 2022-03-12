@@ -16,3 +16,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/avisos',function(){
+    return view('avisos', ['nome' => 'Matheus', 'mostrar' => true,
+    'avisos' =>[ ['id'=>1, 'aviso'=>'teste 1'],
+                 ['id'=>2, 'aviso'=>'teste 2'],
+                 ['id'=>3, 'aviso'=>'teste 3']]]);
+});
+
+Route::get('/exercicio',function(){
+    return view('exercicio', ['textos' =>[
+        ['id'=>1, 'texto'=>'teste 1'],
+        ['id'=>2, 'texto'=>'teste 2'],
+        ['id'=>3, 'texto'=>'teste 3']], 'mostrar'=> true, 'naomostra'=> false]);
+});
+
+
