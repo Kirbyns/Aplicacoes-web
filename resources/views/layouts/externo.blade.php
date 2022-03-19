@@ -7,13 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>
-        @yield('title') <!--o @ é usado para chamar as funções do blade -->
+        @yield('title')
     </title>
 
 </head>
 <body>
     @section('sidebar')
-    Barra Superior
+    Aula De MVC
     @show
     <div class="container">
         @yield('content')
