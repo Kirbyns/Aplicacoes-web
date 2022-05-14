@@ -8,6 +8,9 @@ use Spatie\Permission\Models\Role;
 use DB;
 use Hash;
 use App\Models\User;
+
+use Spatie\Permission\Models\Permission;
+
 class UserController extends Controller
 {
     /**
@@ -17,9 +20,19 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
+        /*
+        $user = User::create([  'name' => 'Bono Milan', 
+                                'email' => 'luiz@milan.com',
+                                'password' => bcrypt('SenhaSecreta')]);
+        $role = Role::create(['name' => 'Admin']);
+        $permissions = Permission::pluck('id','id')->all();
+        $role->syncPermissions($permissions);
+        $user->assignRole([$role->id]);
+        */
+        
         $data = User::orderBy('id','DESC')->paginate(5);
 
-        return view('users.index',
+        return view('users.index', 
                     compact('data'))->with('i',
                                         ($request->input('page', 1) - 1) * 5);
     }
@@ -102,11 +115,11 @@ class UserController extends Controller
                                     'email' => 'required|email',
                                     'password' => 'required|same:confirm-password',
                                     'roles' => 'required']);
-
+        
         $input = $request->all();
 
         if(!empty($input['password'])){
-            $input['password'] = Hash::make($input['password']);
+            $input['password'] = Hash::make($input['password']);            
         }else{
             $input = Arr::except($input, array('password'));
         }

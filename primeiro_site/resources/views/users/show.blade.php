@@ -41,7 +41,7 @@
 
                 @foreach($user->getRoleNames() as $v)
 
-                    <label class="">{{ $v }}</label>
+                    <label >{{ $v }}</label>
 
                 @endforeach
 

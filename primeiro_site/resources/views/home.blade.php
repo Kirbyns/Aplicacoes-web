@@ -18,7 +18,7 @@
                     &nbsp;
                     <a href="/clientes/listar">Listar Clientes</a>
                     &nbsp;
-                    <a href="/users">usuarios</a>
+                    <a href="/users">Usuários</a>
                     &nbsp;
                     <a href="/roles">Perfis</a>
                 </div>
