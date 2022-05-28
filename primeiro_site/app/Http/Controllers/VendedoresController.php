@@ -8,7 +8,7 @@ use App\Models\Vendedores;
 class VendedoresController extends Controller
 {
     /**
-     * Display a listing of the resource.
+
      *
      * @return \Illuminate\Http\Response
      */
@@ -104,4 +104,16 @@ class VendedoresController extends Controller
         }
         return json_enconde($ret);
     }
+
+    public function checkVendedor(int $id):bool{
+
+        $vendedores = [1 => 'paulo',
+                       2 => 'Carla',
+                       3 => 'joao',
+                       4 => 'Isaias'];
+
+        return array_key_exists($id,$vendedores);
+    }
+
+
 }
