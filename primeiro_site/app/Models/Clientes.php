@@ -9,14 +9,14 @@ class Clientes extends Model
 {
     use HasFactory;
 
-    protected $fillable = [ 'id', 
+    protected $fillable = [ 'id',
                             'nome',
                             'endereco',
                             'telefone',
                             'email'];
 
-    protected $table = 'Clientes';   
-    
+    protected $table = 'Clientes';
+
     public function compras()
     {
         return $this->hasMany(Vendas::class, 'cliente_id');
